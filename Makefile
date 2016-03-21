@@ -17,8 +17,8 @@ SRCS = addchar.c \
 	   buffer.c \
 	   tools.c
 
-NAME = libftprintf.a
-GCC_FLAGS = -Wall -Werror -Wextra
+NAME = libft.a
+CC_FLAGS = -Wall -Werror -Wextra
 CC = gcc $(GCC_FLAGS)
 SRCDIR = ./
 OBJDIR = ./objs

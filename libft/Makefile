@@ -6,7 +6,7 @@
 #    By: vijacque <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/15 15:53:13 by vijacque          #+#    #+#              #
-#    Updated: 2015/12/17 15:02:32 by vijacque         ###   ########.fr        #
+#    Updated: 2016/03/16 14:17:08 by vijacque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,12 +21,16 @@ INCS_DIR   = incs
 S		   = ft_atoi.c						\
 			 ft_bzero.c						\
 			 ft_intlen.c					\
+			 ft_endl.c						\
 			 ft_isalnum.c					\
 			 ft_isalpha.c					\
 			 ft_isascii.c					\
 			 ft_isdigit.c					\
 			 ft_isprint.c					\
+			 ft_lst_rec_free.c				\
+			 ft_lst_foreach.c				\
 			 ft_itoa.c						\
+			 ft_lst_push.c					\
 			 ft_memalloc.c					\
 			 ft_memccpy.c					\
 			 ft_memchr.c					\
@@ -86,7 +90,7 @@ $(NAME): $(OBJS)
 	@ranlib $(NAME)
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
-	$(CC) $(ALL_CFLAGS) -I $(INCS_DIR) -c $< -o $@
+	@$(CC) $(ALL_CFLAGS) -I $(INCS_DIR) -c $< -o $@
 
 clean:
 	@$(RM) $(OBJS)
@@ -99,4 +103,4 @@ re: fclean all
 $(OBJS): | $(OBJS_DIR)
 
 $(OBJS_DIR):
-	mkdir $(OBJS_DIR)
+	@mkdir $(OBJS_DIR)
